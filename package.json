@@ -1,0 +1,23 @@
+{
+  "name": "calphus",
+  "version": "1.0.0",
+  "description": "Micro-service to handle magic items",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daag/calphus.git"
+  },
+  "keywords": [
+    "magic",
+    "items"
+  ],
+  "author": "aadamico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daag/calphus/issues"
+  },
+  "homepage": "https://github.com/Daag/calphus#readme"
+}
