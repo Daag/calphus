@@ -2,9 +2,10 @@
   "name": "calphus",
   "version": "1.0.0",
   "description": "Micro-service to handle magic items",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/Daag/calphus/issues"
   },
-  "homepage": "https://github.com/Daag/calphus#readme"
+  "homepage": "https://github.com/Daag/calphus#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
+  }
 }
