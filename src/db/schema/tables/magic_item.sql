@@ -1,11 +1,17 @@
 USE calphus;
 
-ALTER TABLE magic_item (
+CREATE TABLE IF NOT EXISTS magic_item (
     id                      BIGINT          NOT NULL AUTO_INCREMENT,
     name                    NVARCHAR(50)    NOT NULL,
-    type                    INT             NOT NULL,
+    category_id             INT             NOT NULL,
     subtype                 NVARCHAR(50)    NULL,
-    rarity                  INT             NOT NULL,
+    rarity_id               INT             NOT NULL,
     description             TEXT            NOT NULL,
-    PRIMARY KEY(id)
+    attunement              BOOLEAN         NOT NULL DEFAULT (0),
+    attunement_requirement  NVARCHAR(100)   NULL,
+    PRIMARY KEY(id),
+    CONSTRAINT `fk_magic_item_category`
+		FOREIGN KEY (category_id) REFERENCES category (id),
+    CONSTRAINT `fk_magic_item_rarity`
+		FOREIGN KEY (rarity_id) REFERENCES rarity (id)
 );

@@ -1,0 +1,8 @@
+DELIMITER //
+CREATE OR REPLACE PROCEDURE get_magic_items()
+BEGIN
+    SELECT * FROM magic_item;
+END; 
+//
+
+DELIMITER ;
