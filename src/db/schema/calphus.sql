@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS magic_item (
     id                      BIGINT          NOT NULL AUTO_INCREMENT,
     name                    NVARCHAR(50)    NOT NULL,
     category_id             INT             NOT NULL,
-    subtype                 NVARCHAR(50)    NULL,
+    sub_category            NVARCHAR(50)    NULL,
     rarity_id               INT             NOT NULL,
     description             TEXT            NOT NULL,
     attunement              BOOLEAN         NOT NULL DEFAULT (0),
