@@ -3,7 +3,9 @@
 let dal = require('../dal/mysqlDal');
 
 exports.get_items = function(req, res) {
-    res.json({ 'msg': 'Get Items' });
+    dal.get_items(result => {
+        res.json(result);
+    });
 };
 
 exports.add_item = function(req, res) {
@@ -11,7 +13,9 @@ exports.add_item = function(req, res) {
 };
 
 exports.get_item = function(req, res) {
-    res.json({ 'msg': 'Get Item ' + req.params.itemId });
+    dal.get_item(req.params.itemId, result => {
+        res.json(result);
+    });
 };
 
 exports.update_item = function(req, res) {

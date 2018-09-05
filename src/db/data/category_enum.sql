@@ -2,11 +2,11 @@ INSERT INTO category
     (id, name)
 VALUES
     (0, 'Armor'),
-    (1, 'Potions'),
-    (2, 'Rings'),
-    (3, 'Rods'),
-    (4, 'Scrolls'),
-    (5, 'Staffs'),
-    (6, 'Wands'),
-    (7, 'Weapons'),
-    (8, 'Wondrous Items')
+    (1, 'Potion'),
+    (2, 'Ring'),
+    (3, 'Rod'),
+    (4, 'Scroll'),
+    (5, 'Staff'),
+    (6, 'Wand'),
+    (7, 'Weapon'),
+    (8, 'Wondrous Item')

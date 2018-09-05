@@ -1,5 +1,7 @@
 DELIMITER //
-CREATE OR REPLACE PROCEDURE get_magic_items()
+CREATE OR REPLACE PROCEDURE get_magic_item_by_id(
+    IN      p_id            BIGINT
+)
 BEGIN
     SELECT 
         mi.id,
@@ -17,7 +19,9 @@ BEGIN
     LEFT JOIN 
         category c ON (c.id = mi.category_id)
     LEFT JOIN
-        rarity r ON (r.id = mi.rarity_id);
+        rarity r ON (r.id = mi.rarity_id)
+    WHERE
+        mi.id = p_id;
 END; 
 //
 
