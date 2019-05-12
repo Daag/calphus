@@ -1,19 +1,22 @@
 'use strict';
-module.exports = function(app) {
-  let controller = require('../controllers/itemController');
 
-  app.route('/api/items/categories')
-    .get(controller.get_categories);
-  
-  app.route('/api/items/rarities')
-    .get(controller.get_rarities);
+const categoryController = require('../controllers/categoryController')();
+const itemController = require('../controllers/itemController')();
+const rarityController = require('../controllers/rarityController')();
+
+module.exports = function(app) {
+  app.route('/api/categories')
+    .get(categoryController.get_categories);
 
   app.route('/api/items')
-    .get(controller.get_items)
-    .post(controller.add_item);
+    .get(itemController.get_items)
+    .post(itemController.add_item);
 
   app.route('/api/items/:itemId')
-    .get(controller.get_item)
-    .put(controller.update_item)
-    .delete(controller.delete_item);
+    .get(itemController.get_item)
+    .put(itemController.update_item)
+    .delete(itemController.delete_item);
+      
+  app.route('/api/rarities')
+    .get(rarityController.get_rarities);
 };
