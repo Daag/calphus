@@ -3,13 +3,13 @@
 let dal = require('../dal/mysql/mysqlDal')();
 
 module.exports = function () {
-  async function get_rarities (req, res) {
-    const result = await dal.get_rarities();
+  async function getRarities (req, res) {
+    const result = await dal.getRarities();
 
     res.json(result);
   }
 
   return Object.assign({}, {
-    get_rarities
+    getRarities
   });
-}
+};

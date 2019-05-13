@@ -4,7 +4,6 @@ let port = process.env.PORT || 3000;
 let bodyParser = require('body-parser');
 
 let graphqlHTTP = require('express-graphql');
-let { buildSchema } = require('graphql');
 
 let dal = require('./api/dal/graphql/graphqlDal')();
 
@@ -33,7 +32,7 @@ routes(app);
 app.use('/graphql', graphqlHTTP({
   schema: dal.schema,
   rootValue: dal.root,
-  graphiql: true,
+  graphiql: true
 }));
 
 app.listen(port);

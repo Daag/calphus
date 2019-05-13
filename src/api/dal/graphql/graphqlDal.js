@@ -24,13 +24,13 @@ module.exports = function () {
   `);
 
   let root = {
-    hello: () => 'Hello World!', 
+    hello: () => 'Hello World!',
     magicitems: () => data.magicitems,
     categories: () => data.categories
-  }
+  };
 
   return {
     schema: schema,
     root: root
-  }
-}
+  };
+};
