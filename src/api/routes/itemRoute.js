@@ -4,9 +4,9 @@ const categoryController = require('../controllers/categoryController')();
 const itemController = require('../controllers/itemController')();
 const rarityController = require('../controllers/rarityController')();
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.route('/api/categories')
-    .get(categoryController.get_categories);
+    .get(categoryController.getCategories);
 
   app.route('/api/items')
     .get(itemController.get_items)
@@ -16,7 +16,7 @@ module.exports = function(app) {
     .get(itemController.get_item)
     .put(itemController.update_item)
     .delete(itemController.delete_item);
-      
+
   app.route('/api/rarities')
     .get(rarityController.get_rarities);
 };

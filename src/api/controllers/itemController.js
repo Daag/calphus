@@ -3,35 +3,35 @@
 let dal = require('../dal/mysql/mysqlDal')();
 
 module.exports = function () {
-  async function get_items (req, res) {
-    const result = await dal.get_items();
+  async function getItems (req, res) {
+    const result = await dal.getItems();
 
     res.json(result);
   }
 
-  async function get_item (req, res) {
-    const result = await dal.get_item(req.params.itemId);
+  async function getItem (req, res) {
+    const result = await dal.getItem(req.params.itemId);
 
     res.json(result);
   }
 
-  async function add_item (req, res) {
+  async function addItem (req, res) {
     res.json({ 'msg': 'Add Item' });
   }
 
-  async function update_item (req, res) {
+  async function updateItem (req, res) {
     res.json({ 'msg': 'Update Item' + req.params.itemId });
   }
 
-  async function delete_item (req, res) {
-    res.json({ 'msg': 'Delete Item' + req.params.itemId });    
+  async function deleteItem (req, res) {
+    res.json({ 'msg': 'Delete Item' + req.params.itemId });
   }
 
   return Object.assign({}, {
-    get_items,
-    get_item,
-    add_item,
-    update_item,
-    delete_item
-  })
-}
+    getItems,
+    getItem,
+    addItem,
+    updateItem,
+    deleteItem
+  });
+};

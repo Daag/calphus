@@ -3,13 +3,13 @@
 let dal = require('../dal/mysql/mysqlDal')();
 
 module.exports = function () {
-  async function get_categories (req, res) {
-    const result = await dal.get_categories();
+  async function getCategories (req, res) {
+    const result = await dal.getCategories();
 
     res.json(result);
   }
 
   return Object.assign({}, {
-    get_categories
+    getCategories
   });
-}
+};

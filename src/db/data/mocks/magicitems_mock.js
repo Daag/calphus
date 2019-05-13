@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = function() {
-  let magicitems = [
+module.exports = function () {
+  const magicitems = [
     { id: 1, name: 'Flint Sword of the Rift', category: { id: 1, name: 'Weapon' } },
-    { id: 2, name: 'Talisman of the Phoenix', category: { id: 2, name: 'Wondrous Item' }  },
-    { id: 3, name: 'Talisman of the Gargoyle', category: { id: 2, name: 'Wondrous Item' }  }
+    { id: 2, name: 'Talisman of the Phoenix', category: { id: 2, name: 'Wondrous Item' } },
+    { id: 3, name: 'Talisman of the Gargoyle', category: { id: 2, name: 'Wondrous Item' } }
   ];
 
-  let categories = [
+  const categories = [
     { id: 1, name: 'Weapon' },
     { id: 2, name: 'Wondrous Item' },
     { id: 3, name: 'Armor' },
@@ -17,10 +17,10 @@ module.exports = function() {
     { id: 7, name: 'Ring' },
     { id: 8, name: 'Rod' },
     { id: 9, name: 'Wand' }
-  ]
+  ];
 
   return {
     magicitems: magicitems,
     categories: categories
-  }
-}
+  };
+};
