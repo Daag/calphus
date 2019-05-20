@@ -9,14 +9,14 @@ module.exports = function (app) {
     .get(categoryController.getCategories);
 
   app.route('/api/items')
-    .get(itemController.get_items)
-    .post(itemController.add_item);
+    .get(itemController.getItems)
+    .post(itemController.addItem);
 
   app.route('/api/items/:itemId')
-    .get(itemController.get_item)
-    .put(itemController.update_item)
-    .delete(itemController.delete_item);
+    .get(itemController.getItem)
+    .put(itemController.updateItem)
+    .delete(itemController.deleteItem);
 
   app.route('/api/rarities')
-    .get(rarityController.get_rarities);
+    .get(rarityController.getRarities);
 };

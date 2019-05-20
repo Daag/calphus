@@ -2,11 +2,11 @@
   "name": "calphus",
   "version": "1.0.0",
   "description": "Micro-service to handle magic items",
-  "main": "src/server.js",
+  "main": "src/api/server.js",
   "scripts": {
     "lint": "semistandard | snazzy",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon ./api/server.js"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 'use strict';
 
 let { buildSchema } = require('graphql');
-let data = require('../../../db/data/mocks/magicitems_mock')();
+let data = require('../../../test/data/magicitems_mock')();
 
 module.exports = function () {
   let schema = buildSchema(`

@@ -5,7 +5,7 @@ let bodyParser = require('body-parser');
 
 let graphqlHTTP = require('express-graphql');
 
-let dal = require('./api/dal/graphql/graphqlDal')();
+let dal = require('./dal/graphql/graphqlDal')();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
   next();
 });
 
-let routes = require('./api/routes/itemRoute');
+let routes = require('./routes/itemRoute');
 routes(app);
 
 app.use('/graphql', graphqlHTTP({
