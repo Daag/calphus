@@ -1,10 +1,10 @@
 'use strict';
 
-const categoryController = require('../controllers/categoryController')();
-const itemController = require('../controllers/itemController')();
-const rarityController = require('../controllers/rarityController')();
+module.exports = function (app, dal) {
+  const categoryController = require('../controllers/categoryController')(dal);
+  const itemController = require('../controllers/itemController')(dal);
+  const rarityController = require('../controllers/rarityController')(dal);
 
-module.exports = function (app) {
   app.route('/api/categories')
     .get(categoryController.getCategories);
 
