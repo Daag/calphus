@@ -1,8 +1,6 @@
 'use strict';
 
-let dal = require('../dal/mysql/mysqlDal')();
-
-module.exports = function () {
+module.exports = function (dal) {
   async function getCategories (req, res) {
     const result = await dal.getCategories();
 
