@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes/itemRoute');
 const graphqlHTTP = require('express-graphql');
-const graphql = require('./dal/graphql/graphqlDal')();
+const initGraphql = require('./dal/graphql/graphqlDal');
 
 module.exports = function (dal) {
   const app = express();
@@ -30,6 +30,8 @@ module.exports = function (dal) {
   });
 
   routes(app, dal);
+
+  const graphql = initGraphql(dal);
 
   app.use('/graphql', graphqlHTTP({
     schema: graphql.schema,

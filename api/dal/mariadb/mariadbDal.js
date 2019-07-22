@@ -2,6 +2,7 @@
 
 const mysql = require('mysql2');
 const SP = require('./storedProcedureEnum');
+const itemModel = require('../../models/itemModel')();
 
 module.exports = function () {
   const pool = mysql.createPool({
@@ -15,14 +16,14 @@ module.exports = function () {
 
   async function getItems () {
     const result = await callDatabase(buildSpCall(SP.GET_MAGIC_ITEMS));
-    return result;
+    return itemModel.getList(result);
   }
 
   async function getItem (id) {
-    let params = [id];
+    const params = [id];
     console.log('Get_Item_By_Id: ' + params);
     const [result] = await callDatabase(buildSpCall(SP.GET_MAGIC_ITEM_BY_ID, params), params);
-    return result;
+    return itemModel.get(result);
   }
 
   async function addItem () {
