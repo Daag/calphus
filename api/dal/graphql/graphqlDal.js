@@ -1,32 +1,41 @@
 'use strict';
 
-let { buildSchema } = require('graphql');
-let data = require('../../../test/data/magicitems_mock')();
+const { buildSchema } = require('graphql');
 
-module.exports = function () {
-  let schema = buildSchema(`
+module.exports = function (dal) {
+  const schema = buildSchema(`
     type Query {
-      hello: String,
       magicitems: [MagicItem],
+      magicitem(id: Int!): MagicItem,
       categories: [Category]
     }
 
     type MagicItem {
       id: Int!,
       name: String!,
-      category: Category
+      category: Category,
+      sub_category: String,
+      rarity: Rarity,
+      description: String!
+      attunement: Boolean!,
+      attunement_requirement: String
     }
 
     type Category {
       id: Int!,
       name: String!
     }
+
+    type Rarity {
+      id: Int!,
+      name: String!
+    }
   `);
 
-  let root = {
-    hello: () => 'Hello World!',
-    magicitems: () => data.magicitems,
-    categories: () => data.categories
+  const root = {
+    magicitems: () => dal.getItems(),
+    magicitem: (args) => dal.getItem(args.id),
+    categories: () => dal.getCategories()
   };
 
   return {
