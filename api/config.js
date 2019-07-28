@@ -7,7 +7,7 @@ module.exports = function (appName) {
     app: {
       port: 3000
     },
-    dal: {
+    repository: {
       current: 'mariadb',
       mariadb: {
         connectionLimit: 100,

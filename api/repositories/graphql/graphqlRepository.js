@@ -2,7 +2,7 @@
 
 const { buildSchema } = require('graphql');
 
-module.exports = function (dal) {
+module.exports = function (repository) {
   const schema = buildSchema(`
     type Query {
       magicitems: [MagicItem],
@@ -33,9 +33,9 @@ module.exports = function (dal) {
   `);
 
   const root = {
-    magicitems: () => dal.getItems(),
-    magicitem: (args) => dal.getItem(args.id),
-    categories: () => dal.getCategories()
+    magicitems: () => repository.getItems(),
+    magicitem: (args) => repository.getItem(args.id),
+    categories: () => repository.getCategories()
   };
 
   return {

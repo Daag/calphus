@@ -4,9 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes/itemRoute');
 const graphqlHTTP = require('express-graphql');
-const initGraphql = require('./dal/graphql/graphqlDal');
+const initGraphql = require('./repositories/graphql/graphqlRepository');
 
-module.exports = function (dal) {
+module.exports = function (repository) {
   const app = express();
 
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,9 +29,9 @@ module.exports = function (dal) {
     next();
   });
 
-  routes(app, dal);
+  routes(app, repository);
 
-  const graphql = initGraphql(dal);
+  const graphql = initGraphql(repository);
 
   app.use('/graphql', graphqlHTTP({
     schema: graphql.schema,

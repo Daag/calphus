@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function (dal) {
+module.exports = function (repository) {
   async function getCategories (req, res) {
-    const result = await dal.getCategories();
+    const result = await repository.getCategories();
 
     res.json(result);
   }
