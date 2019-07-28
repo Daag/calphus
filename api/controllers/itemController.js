@@ -1,14 +1,14 @@
 'use strict';
 
-module.exports = function (dal) {
+module.exports = function (repository) {
   async function getItems (req, res) {
-    const result = await dal.getItems();
+    const result = await repository.getItems();
 
     res.json(result);
   }
 
   async function getItem (req, res) {
-    const result = await dal.getItem(req.params.itemId);
+    const result = await repository.getItem(req.params.itemId);
 
     res.json(result);
   }

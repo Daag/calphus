@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function (dal) {
+module.exports = function (repository) {
   async function getRarities (req, res) {
-    const result = await dal.getRarities();
+    const result = await repository.getRarities();
 
     res.json(result);
   }
